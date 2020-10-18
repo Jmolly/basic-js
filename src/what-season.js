@@ -1,7 +1,6 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function getSeason(date) {
-  throw new CustomError("Not implemented");
   if (date && !(date instanceof Date)) throw "Error";
   const month = date ? `${date.toLocaleString()}`.split("-")[1] : null;
 
