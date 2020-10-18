@@ -4,7 +4,6 @@ const MODERN_ACTIVITY = 15;
 const HALF_LIFE_PERIOD = 5730;
 
 module.exports = function dateSample(sample) {
-  throw new CustomError("Not implemented");
   const isValid =
     typeof sample === "string" &&
     typeof +sample === "number" &&
