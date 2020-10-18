@@ -10,7 +10,9 @@ module.exports = function dateSample(sample) {
     +sample > 0 &&
     sample < 15;
   const result = isValid
-    ? Math.ceil(Math.log(MODERN_ACTIVITY / sample) / (0.693 / HALF_LIFE_PERIOD))
+    ? Math.ceil(
+        Math.log2(MODERN_ACTIVITY / sample) / (0.693 / HALF_LIFE_PERIOD)
+      )
     : false;
 
   return result;
