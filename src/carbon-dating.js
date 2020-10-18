@@ -4,11 +4,12 @@ const MODERN_ACTIVITY = 15;
 const HALF_LIFE_PERIOD = 5730;
 
 module.exports = function dateSample(sampleActivity) {
-  let result = !validate(sampleActivity) ? false : 0;
+  const isValid = typeof sample === "string" && typeof +sample !== "number";
+  const result = isValid
+    ? Math.ceil(
+        Math.log(MODERN_ACTIVITY / +sampleActivity) / 0.693 / HALF_LIFE_PERIOD
+      )
+    : false;
 
   return result;
-};
-
-const validate = (sample) => {
-  return typeof sample === "string" && typeof +sample !== "number";
 };
