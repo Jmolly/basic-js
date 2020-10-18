@@ -1,8 +1,8 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function getSeason(date) {
-  // if (date && !(date instanceof Date)) throw "Error";
-  throw "error";
+  if (date && !(date instanceof Date) && date.getTime() === date.getTime())
+    throw "Error";
   const month = date ? `${date.toLocaleString()}`.split("-")[1] : null;
 
   const seasons = {
